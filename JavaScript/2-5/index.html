@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id="lang" onchange="changeLang()">
+        <option value= "" id="select">選択してください</option>
+        <option value="1" id="selected_jpn">日本語</option>
+        <option value="2" id="selected_en">English</option>
+        <option value="3" id="selected_all">全て表示</option>
+    </select>
+    <table>
+        <tr id="jpn">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="en">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        function changeLang() {
+            let flug = document.getElementById("lang").value;
+            let flugJpn = document.getElementById("jpn");
+            let flugEng = document.getElementById("en");
+
+
+            if (flug === "1") {
+                flugJpn.style.display = "block";
+                flugEng.style.display = "none";
+                console.log(flug);          //デバッグ
+                console.log(flugJpn);
+
+            } else if (flug === "2") {   
+                flugJpn.style.display = "none";
+                flugEng.style.display = "block";
+                console.log(flug);
+                console.log(flugEng);
+
+            } else if (flug == "3") {
+                flugJpn.style.display = "block";
+                flugEng.style.display = "block";
+                console.log(flug);
+
+            } else {
+                console.log("Out");
+            }
+
+        }
+    </script>
+</body>
+</html>
