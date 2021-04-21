@@ -12,7 +12,7 @@ var app = new Vue ({
         ],
         //newItemを空の状態で用意する。
         newItem: "",
-        show: false
+        show: true      //v-ifの表示がfalseだと消える（検証ツールだとコメントアウトされる）
     },
     methods: {
         //関数
